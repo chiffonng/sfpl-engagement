@@ -24,15 +24,17 @@ Credits: Syntax and naming conventions referred from [Alexander Wong](https://gi
     - email_notification
     - isin_sf
 3. Change the file type from Excel `.xlsx` to CSV `sfpl_usage.csv`
-4. Move the CSV file and SQL script in the same folder. Otherwise, configure the path to include the actual path to the CSV file ([line 23]((https://github.com/chiffonng/sfpl-management/blob/master/sfpl_usage.sql)).
-## SQL script
+4. Move the CSV file and SQL script in the same folder. Otherwise, configure the path to include the actual path to the CSV file ([line 23](https://github.com/chiffonng/sfpl-management/blob/master/sfpl_usage.sql)).
+5. Run SQL script from file `sfpl_usage.sql`. For example, I run it with PostgreSQL command line `psql -U user_name -d database_name < file.sql` ([Detailed guide](https://www.warp.dev/terminus/psql-run-sql-file))
+
+## SQL script 
 Major changes applied to the dataset include
 - Removing all records/rows where there is no information about circulation activity for patrons.
 - Creating a new column `last_active` that represents the last time patrons 
 
 By default, end users will see the cleaned data and 3 views
 - Patron type VS age range
-- Summary statistics by patron types (distribution of patrons, average # checkouts, average # renewals.
+- Summary statistics by patron types (distribution of patrons, average # checkouts, average # renewals).
 - Summary statistics by library branch
 
 More views can be created and stored through `CREATE VIEW`. Similarly, queries can be created and stored through `CREATE PROC`
