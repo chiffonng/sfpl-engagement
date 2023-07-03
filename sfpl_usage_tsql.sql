@@ -18,9 +18,9 @@ GO
         email_notification BOOLEAN NOT NULL,
         isin_sf BOOLEAN NOT NULL
     );
--- Ingest CSV file
-COPY tbl_library_usage
-FROM 'sfpl_usage.csv' DELIMITER ',' CSV HEADER;
+    -- Ingest CSV file
+    COPY tbl_library_usage
+    FROM 'sfpl_usage.csv' DELIMITER ',' CSV HEADER;
 
 /* ============ CLEANING ============ */
 -- Delete null values
